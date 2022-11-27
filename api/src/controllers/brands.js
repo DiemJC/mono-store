@@ -1,5 +1,5 @@
 import { deleteDoc, getDoc, getDocs, updateDoc } from '.';
-import Brand from '../models/store/Brand';
+import Brand from '../models/Brand';
 
 export const createBrand = async (req,res,next) => {
     try {
