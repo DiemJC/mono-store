@@ -1,7 +1,5 @@
 
-<!-- <script>import "../app.postcss";</script><slot></slot> -->
-
-<!-- <script>
+<script>
     import '../app.postcss';
     import { Shadow } from 'svelte-loading-spinners';
     import { ToastContainer , FlatToast }  from "svelte-toasts";
@@ -41,4 +39,4 @@
         display:grid;
         place-content:center;
     }
-</style> -->
+</style>
