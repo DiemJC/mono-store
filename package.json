@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev:adm":"npm run dev -w ./adm",
+    "dev:api":"npm run dev -w ./api",
+    "dev": "concurrently npm:dev:*"
   },
   "author": "angeldesweb <angeldesweb@gmail.com>",
   "license": "ISC",
