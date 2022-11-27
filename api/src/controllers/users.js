@@ -7,7 +7,6 @@ export const SignIn = async (req,res,next) => {
         const { email , password } = req.body;
         let hashed = await User.findOne({email}).select('password');
         const user = await User.findOne({email});
-        console.log(user,hashed,email,password)
         if(!user) return res.status(401).send({success:false,message:'Usuario y/o contraseña inválidos'});
         const { isValid } = await checkPassword(password,hashed.password);
         if(!isValid) return res.status(401).send({success:false,message:'Usuario y/o contraseña inválidos'});

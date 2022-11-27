@@ -2,10 +2,12 @@
 	import { browser } from '$app/environment';
 	import { goto } from '$app/navigation';
     import { auth } from '$lib/store';
+    import { socket } from '$lib/client/socket';
 
     $: hasSession = $auth.isAuth;
 
     const endSession = () => {
+        socket.disconnect();
         browser && localStorage.clear()
         auth.logout();
         goto('/')
