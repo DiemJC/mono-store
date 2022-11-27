@@ -1,5 +1,6 @@
 import { connect } from 'mongoose';
 import User from '../models/User';
+import { hashPassword } from '../services/passwords';
 import docs from './users.json';
 
 (() => {
@@ -9,6 +10,10 @@ import docs from './users.json';
             const users = await User.find();
             console.log(`Current users ${users}`)
             if(users.length === 0) {
+                await Promise.all(docs.map(async user => {
+                    user.password =await hashPassword(user.password);
+                    return user;
+                }))
                 const response = await User.insertMany(docs);
                 console.log(response);
                 return;

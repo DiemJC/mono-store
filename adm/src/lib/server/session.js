@@ -3,9 +3,8 @@ import { env } from '$env/dynamic/private'
 const apidir = env.API_URL;
 
 export const signIn = async ({email,password}) => {
-    console.log(email, password)
     try {
-        const response = await fetch(`${apidir}/apiv1/pub/signin`,{
+        const response = await fetch(`${apidir}/apiv1/public/signin`,{
             method:'POST',
             headers:{
                 'Content-type':'application/json'
@@ -17,6 +16,7 @@ export const signIn = async ({email,password}) => {
         console.log(data)
         return data;
     } catch (error) {
+        console.log(error);
         return error;
     }
 };

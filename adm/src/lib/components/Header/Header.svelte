@@ -21,9 +21,10 @@
             <!-- <div class="form-control">
                 <input type="text" placeholder="Search" class="input input-bordered" />
             </div> -->
-            <label for="my-drawer-2" class="btn btn-ghost text-white btn-xs drawer-button lg:hidden">Menu</label>
+            
             <!-- ELIMINAR VISIBILIDAD EN MOVILES Y AGREGAR MENU PARA MOVILES -->
             {#if hasSession}
+            <label for="my-drawer-2" class="btn btn-ghost text-white btn-xs drawer-button lg:hidden">Menu</label>
             <div class="dropdown dropdown-end ">
                 <label for="" tabindex="-1" class="btn btn-ghost btn-circle avatar">
                     <div class="w-10 rounded-full">

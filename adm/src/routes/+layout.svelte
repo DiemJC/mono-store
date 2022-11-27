@@ -16,8 +16,8 @@
 <div class="loading bg-base-100">
     <Shadow size="60" color="#88A0A8" unit="px"/>
 </div>
-{:else}
-<div class="app">
+{/if}
+<div class="app" class:hidden={$loading}>
     <Header/>
     <Drawer>
         <div>
@@ -26,7 +26,6 @@
         <SideMenu slot="menu" />
     </Drawer>
 </div>
-{/if}
 <ToastContainer let:data={data}>
     <FlatToast {data} />
 </ToastContainer>
@@ -38,5 +37,8 @@
         height:100vh;
         display:grid;
         place-content:center;
+    }
+    .hidden {
+        display:none;
     }
 </style>
