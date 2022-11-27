@@ -11,7 +11,7 @@ export const SignIn = async (req,res,next) => {
         const { isValid } = await checkPassword(password,hashed.password);
         if(!isValid) return res.status(401).send({success:false,message:'Usuario y/o contraseña inválidos'});
         const token = createToken(user);
-        return res.status(200).send({success:true,message:'Bienvenid@ de nuevo',id:user._id,token});
+        return res.status(200).send({success:true,message:'Bienvenid@ de nuevo',id:user._id,token,role:user.role});
     } catch (error) {
         next(error);
     }
