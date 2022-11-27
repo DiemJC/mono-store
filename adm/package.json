@@ -27,6 +27,8 @@
 	},
 	"type": "module",
 	"dependencies": {
-		"daisyui": "^2.42.1"
+		"daisyui": "^2.42.1",
+		"svelte-loading-spinners": "^0.3.4",
+		"svelte-toasts": "^1.1.2"
 	}
 }
