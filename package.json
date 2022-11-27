@@ -1,0 +1,20 @@
+{
+  "name": "mono-store",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "angeldesweb <angeldesweb@gmail.com>",
+  "license": "ISC",
+  "workspaces": [
+    "api",
+    "adm",
+    "app"
+  ],
+  "devDependencies": {
+    "@s-ui/mono": "^1.72.0",
+    "concurrently": "^7.6.0"
+  }
+}
