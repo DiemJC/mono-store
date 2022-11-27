@@ -1,5 +1,6 @@
 import { invalid } from '@sveltejs/kit';
 import { signIn } from '$lib/server/session';
+import { socket } from '$lib/client/socket';
 
 export const actions = {
     default: async ({request}) => {
@@ -16,6 +17,9 @@ export const actions = {
         const response = await signIn({email,password});
         
         const { success , message , token , role , id } = response;
+
+        socket.auth = {token}
+        socket.connect();
 
         if(!success) return invalid(401,{failedFetch:true,message});
 

@@ -1,12 +1,10 @@
-import { env } from '$env/dynamic/public';
 import { io } from 'socket.io-client';
+const ENDPOINT = 'http://localhost:3000';
 
-const apidir = env.PUBLIC_WS_URL;
+export const socket = io(ENDPOINT,{
+    autoConnect:false
+});
 
-export const fetchSocket = () => {
-    const socket = io(apidir);
-    let id = ''
-    socket.on("connect", () => id = socket.id);
-    console.log('Socket created',{socket,id})
-    return { socket , id }
-}
+socket.onAny((event,...args) => {
+    console.log({event,args});
+});

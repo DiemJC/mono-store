@@ -1,4 +1,4 @@
-import { env } from '$env/dynamic/private'
+import { env } from '$env/dynamic/private';
 
 const apidir = env.API_URL;
 
@@ -13,7 +13,6 @@ export const signIn = async ({email,password}) => {
             body:JSON.stringify({email,password})
         });
         const data = await response.json();
-        console.log(data)
         return data;
     } catch (error) {
         console.log(error);
