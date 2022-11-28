@@ -27,3 +27,12 @@ const addUser = async (req,res,next) => {
         next(error);
     }
 }
+
+export const getUsers = async (req,res,next) => {
+    try {
+        const docs = await User.find();
+        return res.status(200).send({success:true,docs,message:'Petición realizada'})
+    } catch (error) {
+        next(error)
+    }
+}

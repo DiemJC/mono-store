@@ -1,5 +1,5 @@
 <script>
-    import { loading } from '$lib/store';
+    import { loading , ws } from '$lib/store';
 	import { onMount } from 'svelte';
 
     onMount(() => loading.off())

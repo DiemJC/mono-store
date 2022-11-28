@@ -2,6 +2,7 @@
 	import { goto } from '$app/navigation';
     import { Field , FormBox } from '$lib/components';
     import { auth , loading } from '$lib/store';
+    //import { socket } from '$lib/client/socket';
 	import { onMount } from 'svelte';
     
     $: emailError = '';
